@@ -7,10 +7,12 @@ import os
 openai.api_key = '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'
 engine = pyttsx3.init()
 
-def get_completion(prompt, model="gpt-3.5-turbo"):
+def get_completion(prompt, model="gpt-3.5-turbo", messages=None):
 
-    messages = [{"role": "user", "content": prompt}]
-
+    if messages is None:
+        messages = [{"role": "user", "content": prompt}]
+    else:
+        messages.append({"role": "user", "content": prompt})
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
