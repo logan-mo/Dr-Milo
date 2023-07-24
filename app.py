@@ -20,7 +20,7 @@ import re
 from nltk.corpus import stopwords
 
 Wav2VecPipeline = pipeline("automatic-speech-recognition")                          # Load a pretrained speech recognition model
-openai.api_key = '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'              # Loading APIKey for ChatGPT
+openai.api_key = ''              # Loading APIKey for ChatGPT
 medical_classification_model = pickle.load(open('./models/model.pkl', 'rb'))        # Load our custom classification model
 
 messages = [
